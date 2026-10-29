@@ -44,8 +44,8 @@ This repository documents the project and what it achieved. The apps themselves 
 - Wrote a live terminal monitor that shows CPU and GPU clocks, GPU load, RAM, chip/GPU/battery/skin temperatures and power draw, using only local adb.
 - Learned which sources are live and which are cached on Samsung phones, and which sensors adb is allowed to read.
 
-### Reverse engineering and patching
-- Patched and rebuilt APKs with apktool and smali, injected changed dex files into signed builds, and verified every build by decompiling it and diffing against the previous version.
+### Patching and debugging my own apps
+- Patched and rebuilt my own APKs with apktool and smali, injected changed dex files into signed builds, and verified every build by decompiling it and diffing against the previous version.
 
 ## How it fits together
 
