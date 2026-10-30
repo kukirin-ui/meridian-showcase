@@ -21,9 +21,11 @@ This repository documents the project and what it achieved. The apps themselves 
 
 ## Video
 
+This is just a teaser. Meridian Chat and NullCloud aren't shown here yet, more coming.
+
 Real screen recording on a Galaxy S26, 143 s, no edits. It shows Meridian Core (helper and family link), Meridian Gaming (live sensors and clocks, network speed test, task killer, heat stop, part of tuning) and Parallel: Build options, Plan (writes the steps, Run creates them), and a Console linked to Termux that turns a wrong command into a suggested fix, with the option to ask a local model or an online model through your own API key. Built in Kotlin and C++.
 
-Watch it on X: https://x.com/termuxSolutions/status/2116310251070714073
+Watch it on X: https://x.com/termuxSolutions/status/2116314036728140043
 
 ## What I accomplished
 
