@@ -4,10 +4,33 @@
 ### Five Android apps. One connected system. Built from a phone.
 **An offline-first, model-agnostic Android environment for local AI, Termux engineering, device operations and shared knowledge.**
 
-[![Android 11+](https://img.shields.io/badge/Android-11%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://www.android.com/) [![Termux](https://img.shields.io/badge/Termux-native-111111?style=for-the-badge&logo=gnubash&logoColor=white)](https://termux.dev/) [![Local AI](https://img.shields.io/badge/AI-local_first-6046D8?style=for-the-badge)](https://github.com/kukirin-ui/meridian-releases) [![Current](https://img.shields.io/badge/current-2.6.55-blue?style=for-the-badge)](https://github.com/kukirin-ui/meridian-releases/releases/latest)
+[![Android 11+](https://img.shields.io/badge/Android-11%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://www.android.com/) [![Termux](https://img.shields.io/badge/Termux-native-111111?style=for-the-badge&logo=gnubash&logoColor=white)](https://termux.dev/) [![Local AI](https://img.shields.io/badge/AI-local_first-6046D8?style=for-the-badge)](https://github.com/kukirin-ui/meridian-releases) [![Current](https://img.shields.io/badge/source-2.6.55-blue?style=for-the-badge)](https://github.com/kukirin-ui/meridian-releases/releases/latest)
 
 [Get the apps](https://github.com/kukirin-ui/meridian-releases) · [Website](https://kukirin-ui.github.io/meridian-site/) · [Architecture](docs/ARCHITECTURE.md) · [Complete feature catalog](docs/FEATURE-CATALOG.md) · [Benchmarks](docs/BENCHMARKS.md) · [Install & release](docs/INSTALL-AND-RELEASE.md)
 </div>
+
+---
+
+## Inside the apps — real interface captures
+
+These are captures from the published Meridian interface, not concept mockups. Open an image to inspect it at full size.
+
+| Meridian Chat | Meridian Core |
+|---|---|
+| ![Chat home](${raw}chat-home.webp) | ![Core connected](${raw}core-connected.webp) |
+| [Chat home](${raw}chat-home.webp) · [Model and tools](${raw}chat-menu.webp) · [Device controls](${raw}chat-tweaks.webp) | [Core connected](${raw}core-connected.webp) · [Wireless debugging](${raw}core-wireless.webp) · [Pairing](${raw}core-pair.webp) · [Paired](${raw}core-paired.webp) · [Shell bridge](${raw}core-code.webp) |
+
+| Meridian Gaming | Meridian Parallel |
+|---|---|
+| ![Gaming dashboard](${raw}gaming-dashboard.webp) | ![Parallel findings](${raw}parallel-findings.webp) |
+| [Dashboard](${raw}gaming-dashboard.webp) · [Advanced tuning](${raw}gaming-advanced.webp) · [Task isolation](${raw}gaming-isolate.webp) | [Findings](${raw}parallel-findings.webp) · [Diagnose input](${raw}parallel-paste.webp) · [Fix workflow](${raw}parallel-fix.webp) · [Pattern match](${raw}parallel-pattern.webp) · [Verified result](${raw}parallel-verified.webp) |
+
+| NullCloud |
+|---|
+| ![NullCloud source reading](${raw}nullcloud-source.webp) |
+| [Source](${raw}nullcloud-source.webp) · [Summary](${raw}nullcloud-summary.webp) · [Extracted facts](${raw}nullcloud-facts.webp) · [Ask source](${raw}nullcloud-ask.webp) · [Presets](${raw}nullcloud-presets.webp) |
+
+[Open the full website](https://kukirin-ui.github.io/meridian-site/) for the complete gallery and product walkthroughs.
 
 ---
 
