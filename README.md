@@ -17,18 +17,18 @@ These are captures from the published Meridian interface, not concept mockups. O
 
 | Meridian Chat | Meridian Core |
 |---|---|
-| ![Chat home](${raw}chat-home.webp) | ![Core connected](${raw}core-connected.webp) |
-| [Chat home](${raw}chat-home.webp) · [Model and tools](${raw}chat-menu.webp) · [Device controls](${raw}chat-tweaks.webp) | [Core connected](${raw}core-connected.webp) · [Wireless debugging](${raw}core-wireless.webp) · [Pairing](${raw}core-pair.webp) · [Paired](${raw}core-paired.webp) · [Shell bridge](${raw}core-code.webp) |
+| ![Chat home](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/chat-home.webp) | ![Core connected](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/core-connected.webp) |
+| [Chat home](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/chat-home.webp) · [Model and tools](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/chat-menu.webp) · [Device controls](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/chat-tweaks.webp) | [Core connected](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/core-connected.webp) · [Wireless debugging](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/core-wireless.webp) · [Pairing](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/core-pair.webp) · [Paired](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/core-paired.webp) · [Shell bridge](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/core-code.webp) |
 
 | Meridian Gaming | Meridian Parallel |
 |---|---|
-| ![Gaming dashboard](${raw}gaming-dashboard.webp) | ![Parallel findings](${raw}parallel-findings.webp) |
-| [Dashboard](${raw}gaming-dashboard.webp) · [Advanced tuning](${raw}gaming-advanced.webp) · [Task isolation](${raw}gaming-isolate.webp) | [Findings](${raw}parallel-findings.webp) · [Diagnose input](${raw}parallel-paste.webp) · [Fix workflow](${raw}parallel-fix.webp) · [Pattern match](${raw}parallel-pattern.webp) · [Verified result](${raw}parallel-verified.webp) |
+| ![Gaming dashboard](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/gaming-dashboard.webp) | ![Parallel findings](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/parallel-findings.webp) |
+| [Dashboard](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/gaming-dashboard.webp) · [Advanced tuning](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/gaming-advanced.webp) · [Task isolation](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/gaming-isolate.webp) | [Findings](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/parallel-findings.webp) · [Diagnose input](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/parallel-paste.webp) · [Fix workflow](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/parallel-fix.webp) · [Pattern match](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/parallel-pattern.webp) · [Verified result](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/parallel-verified.webp) |
 
 | NullCloud |
 |---|
-| ![NullCloud source reading](${raw}nullcloud-source.webp) |
-| [Source](${raw}nullcloud-source.webp) · [Summary](${raw}nullcloud-summary.webp) · [Extracted facts](${raw}nullcloud-facts.webp) · [Ask source](${raw}nullcloud-ask.webp) · [Presets](${raw}nullcloud-presets.webp) |
+| ![NullCloud source reading](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/nullcloud-source.webp) |
+| [Source](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/nullcloud-source.webp) · [Summary](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/nullcloud-summary.webp) · [Extracted facts](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/nullcloud-facts.webp) · [Ask source](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/nullcloud-ask.webp) · [Presets](https://raw.githubusercontent.com/kukirin-ui/meridian-site/main/img/explore/nullcloud-presets.webp) |
 
 [Open the full website](https://kukirin-ui.github.io/meridian-site/) for the complete gallery and product walkthroughs.
 
