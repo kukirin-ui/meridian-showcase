@@ -197,7 +197,65 @@ Summarize, bullet points, key points, explain subject, extract knowledge/facts, 
 - Select GGUF file and configure threads, GPU layers and context.
 - Install/start the model engine from the model screen when using standalone mode.
 
-## 6. Release and support
+## 6. Screen-level inventory and exposed controls
+
+This section records the user-facing surfaces and controls present in the checked-in suite inventory. It complements the functional descriptions above; it is not a claim that every control succeeds on every Android build.
+
+### Chat — primary workspace surfaces
+- Main conversation surface and model picker.
+- Projects, project creation and project-specific context.
+- Instructions/tone and optional ICM headings (Inputs, Process, Outputs).
+- Conversation memory and add-memory action.
+- File attachments, Termux file access and refresh/permission flow.
+- Prompt library with use/save actions.
+- Local model mesh: model discovery, add-by-path, Hugging Face download entry, model fit check, per-model backend/threads/CPU cores/context/GPU layers/batch/micro-batch/max-reply/Flash Attention/KV-cache/thinking controls, load, speed test, remove and move/copy actions.
+- Mesh orchestration controls: model membership, smallest-first preference, answer-with-local-models toggle, optional RAM release through Core, model-count limit, voice/wake-word settings, knowledge-tree branch and skill-card association, heat limits, start/stop mesh, learned items and command execution.
+- Online workspace: provider/model/key fields, explicit online toggle, quality, step budget, per-answer cost cap, optional VPN requirement, three provider seats and local/online mode selection.
+- Recipe pack browser (493 cards in the inventoried build), library sync and copy action.
+- Skill tree with 12 top-level knowledge domains and nested branches/cards.
+- Lessons/dictionary library, optional library installation and read action.
+- Phone actions: ask the phone, release RAM, pause cores and open Gaming tweaks.
+- Settings, licenses, About, support and report-a-problem surfaces.
+
+### Gaming — screen-level controls
+- Main tabs: Home, Hardware, System, Battery, Security and Tools.
+- Home: battery/RAM/CPU/activity summary, hold action, network speed test and device-care entry.
+- Hardware: share hardware report, ZRAM, copy report as Markdown, advanced settings and task-isolation entry.
+- Setup: Termux connection, Core/root capability and Termux:API checklist with re-check and installation guidance.
+- Benchmark controls: select GGUF model; GPU/Vulkan, CPU+GPU or CPU-only backend; GPU layers; threads; CPU affinity/taskset; Flash Attention; KV cache; prompt/generation token counts; repeats; batch and micro-batch; CPU single/multi, GPU, RAM and full-run presets; history and result verification.
+- Game profiles: detected games, manual add, auto-add toggle, watch mode and Android permission handoffs for write settings, Do Not Disturb and overlay.
+- Task isolation: app search/selection, keep Google Play services, optional Samsung/Google extras handling, isolate now, keep isolated while selected app is open and driver discovery.
+- Tuning: heat-stop battery threshold, save threshold and stop-heavy-work-now action.
+- Settings: theme, OLED, haptics/motion/brightness choices, refresh cadence, help, keyboard shortcuts, licenses and support.
+
+### Parallel — screen-level controls
+- Main tabs: Home, Diagnose, Plan, Console, Files, APIs and Tools.
+- Home connection state and entry points to scheduler, fix recipes and extensions.
+- Console: command input, session selector, Open Termux, storage/battery context and Run.
+- Files: Home, Downloads, Shared, DCIM, Models, Projects, Notes, Logs, Bin and Meridian locations; navigation, selection, refresh, new project/folder/file.
+- Plan: 191 inventoried plans/commands grouped by phone, Termux, AI, web/servers, developer tools, languages/builds, files/media, phone/system and Linux desktop; search and describe-task/write-steps workflow.
+- Build: language recipes for Node.js, Rust, Go, Ruby, PHP, Lua, Java and Clang/C/C++; utility recipes include jq, tree, unzip, rsync and disk usage.
+- Tools: package installed/update/upgrade/search/show, apt cache/repair/reinstall; language runtimes and compilers; Git/Docker CLI; file/storage utilities; editors; ripgrep/jq/tree/unzip/rsync/curl/wget; local model, llama-server, GPU compute, Python job, Node service, web page, media box, remote shell and Debian/Ubuntu.
+- APIs: Groq, Gemini, OpenRouter, Mistral, Cerebras, NVIDIA NIM, OpenAI, Grok/xAI, Anthropic and custom endpoint; local key save/forget actions.
+- Scheduler: task and cadence selection, schedule, refresh and stop-all.
+- Doctor: Network, Storage, Memory, Heat, Battery, Termux, Packages, Local model, Meridian Core and Permissions.
+- Fix recipes include phantom processes, Android 14 checklist, Termux battery page, CPU/GPU, system check, Vulkan repair, package lock, broken install, missing files, Core tools, shebang, repository/keyring/certificate/X11 issues, API check, phone report, command cache, storage link, cache and temporary-folder cleanup.
+- Debian/Ubuntu entry points through proot-distro.
+- Local mesh surface includes model paths/count, wake word/voice, knowledge branch, skill card, command and learning links, heat pause/restart thresholds and warm-core limit.
+
+### NullCloud — screen-level controls
+- Home: read a link, import PDF, paste text, open library and open model.
+- Read: source field, optional answer language, paste/PDF/clear, summarize, bullets, key points, explain, extract knowledge/facts, recipe, how-to, claims check, simplify, translate, ask and run-on-this-phone actions.
+- Model: use Chat's loaded model automatically or choose standalone; phone RAM/chip inputs, threads, GPU layers and context; model discovery, GGUF file picker, download entries, engine installation and start.
+- Library: saved reads and reopen/read action.
+
+### Cross-app settings and support
+- Theme modes include system, dark, light and OLED where exposed.
+- Accessibility/display settings include window scaling; selected apps expose refresh, haptics, motion and keyboard-shortcut controls.
+- Licenses, About, documentation, support and Report a problem are exposed in app settings or About surfaces.
+- Android permission and capability flows remain user-mediated.
+
+## 7. Release and support
 - Private source: kukirin-ui/Clean-Meridian.
 - GitHub Actions builds five unsigned APKs for a source commit.
 - Owner release script checks source state, exact remote commit, authentication, permissions and signing prerequisites.
@@ -206,7 +264,7 @@ Summarize, bullet points, key points, explain subject, extract knowledge/facts, 
 - Website What's New is updated from release notes and Pages deployment is verified.
 - In-app Report a problem previews app/version/device context before the user submits.
 
-## 7. Dependencies and boundaries
+## 8. Dependencies and boundaries
 
 | Capability | Dependency / limit |
 |---|---|
@@ -222,7 +280,7 @@ Summarize, bullet points, key points, explain subject, extract knowledge/facts, 
 | Model Intelligence | Advisory complexity/context/calibration layer; not an embedding engine or automatic model selector |
 | Benchmarks | Specific to phone, model, backend, flags and thermal state |
 
-## 8. Explicit non-claims
+## 9. Explicit non-claims
 - ADB shell elevation is not root.
 - Model-free retrieval does not mean every generative feature works without a model.
 - No neural embedding model is claimed by the model-free foundation.
