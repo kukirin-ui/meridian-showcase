@@ -1,35 +1,42 @@
-# Architecture
+# Meridian architecture — five apps, one family core
 
-```mermaid
-flowchart LR
-  subgraph Phone
-    Core[Meridian Core<br/>ADB helper on loopback]
-    Chat[Meridian Chat]
-    Par[Parallel]
-    Gam[Meridian Gaming]
-    Null[NullCloud]
-    subgraph Termux
-      LS[llama-server :8080<br/>Qwen3.5-4B + Vulkan]
-      Lib[(Shared library<br/>recipes, lessons)]
-    end
-  end
-  Gam -- bound service --> Core
-  Par -- bound service --> Core
-  Chat -- OpenAI-style API --> LS
-  Chat -- read / write --> Lib
-  Par -- jobs, files --> Termux
-  Null -- local model --> LS
-  Cloud[(Optional online provider<br/>your own key)] -. recipes .-> Lib
-```
+## System view
+Meridian is five standalone Android apps connected through Core. Chat owns model-facing interaction; Parallel owns Termux workflows; Gaming owns device operations; NullCloud owns source reading; Core owns family contracts and durable shared knowledge.
 
-## Meridian Core: elevation without root
+## Core bridge and elevation
+1. User enables Android Developer options and Wireless debugging.
+2. Core pairs through Android's pairing-code flow and discovers the ADB endpoint.
+3. Core launches a helper as the Android shell user with app_process.
+4. Helper listens on a random loopback port and requires a one-time token.
+5. Family apps request supported operations through Core's bound service.
+6. Core can reattach after its own process restarts.
 
-1. Core connects to the phone's own adb daemon: Wireless debugging, or `127.0.0.1:5555` after `adb tcpip 5555`.
-2. It pushes a small starter script and launches `app_process` as the shell user, in its own session, so the helper outlives the adb connection and survives Wi-Fi off.
-3. The helper listens on a random loopback port and only accepts clients that present a one-time token.
-4. Family apps call Core through a bound service; Core forwards to the helper. If Core is restarted, it re-attaches to the running helper.
+This is shell-user access through Android debugging, not root. Android may disable Wireless debugging after reboot; reconnect is a user action.
 
-## Meridian Chat: local and online roles
+## Shared data and typed ports
+The family provider is content://com.meridian.core.data. Port topology is declared in the private source at docs/ports.json and generated into Core and app-side bus contracts.
 
-- **Local model (on the phone):** the one that talks to you. Answers from the recipe library, skills and web search.
-- **Online agent (optional):** turns a large skill tree into short "how to do it" recipes for the shared library.
+- tlm: telemetry/status.
+- prm: owner-written parameters/settings.
+- cmd: targeted request/result.
+- evr: family events.
+
+Ports are owner-scoped, schema-validated and size-bounded. CI checks generated parity.
+
+## Model-free knowledge path
+Problem/query → ICM intent/context/method → Core local full-text index → candidate pool → error-signature ranking plus secondary structural reranking → multiple distinct proven examples → deterministic result/recipe.
+
+Optional models can propose candidates. Sandbox evidence and Core's promotion policy determine whether a candidate becomes durable knowledge. Retrieval does not require an embedding model, neural runtime or resident LLM.
+
+## Optional Model Intelligence
+- Fixer, Helper and Judge remain separate roles.
+- Complexity and seat recommendations are advisory.
+- Context budgeting may compact optional debugger detail but must preserve required source, ICM, failed-attempt evidence and output contract.
+- Calibration is bounded, records eligible model-produced candidates with real Sandbox outcomes and remains advisory.
+- Calibration is not Core knowledge and does not silently replace the user's model selection.
+
+## Termux and execution
+Parallel calls Termux for commands, files, package tools, build recipes, jobs, scheduler and local model services. CodeGen/Sandbox is a structured project workflow, not a hardened hostile-code jail.
+
+## Build and release
+Private Clean-Meridian source builds five unsigned APKs in GitHub Actions. The owner signs on-device in Termux, verifies the common family certificate, installs and publishes APKs/checksums to meridian-releases, then updates the public website. The private key never enters source or CI.
