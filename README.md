@@ -44,7 +44,7 @@ Meridian is not one oversized chatbot with five tabs. It is a family of five sta
 - **Every app's verified work is shared:** commands that ran, files that passed their check, fixes the Sandbox proved and programs whose tests passed are kept in Core, and every model gets the closest verified work as an example before it answers.
 - **Core opens the apps for their work** and closes them again: only Core and the app on screen use memory.
 - **Any model can have a program built:** Parallel writes it with its tests, proves it in the Sandbox and saves it in Termux.
-- **14 job adapters** on one local model, **Teacher mode**, **Me mode**, **tools for local models**, **Model Lab**, **Forge**, **Recipe Compiler**, **Repro Lab**, **NullCloud Studio**, **Smart gaming**, **Theme Studio**, the **Caretaker**, the **internet switch** and **Core · Translator**.
+- **14 LoRA adapters made only for Qwen3.5-4B**, **Teacher mode**, **Me mode**, **tools for local models**, **Model Lab**, **Forge**, **Recipe Compiler**, **Repro Lab**, **NullCloud Studio**, **Smart gaming**, **Theme Studio**, the **Caretaker**, the **internet switch** and **Core · Translator**.
 
 The complete list: [3.0.00 release notes](https://github.com/kukirin-ui/meridian-releases/releases/tag/v3.0.00) · [feature catalog](docs/FEATURE-CATALOG.md).
 
@@ -92,7 +92,7 @@ Core coordinates the family and owns shared services and durable knowledge.
 - Projects, conversations, memory, custom instructions, tone, reusable prompts and attachments.
 - Termux file access and command handoff when connected.
 - Skill trees, skill cards, lessons, recipes, shared knowledge library and web search with citations.
-- **3.0.00:** 14 job adapters on one base model; Me mode; Teacher mode; builds through Parallel; Meridian's tools for models measured as reliable; Model Lab and the Store; Tweaks with llama.cpp built from source, Vulkan drivers and presets; Storage; Croatian through Core's Translator; Chat holds the family's API keys.
+- **3.0.00:** 14 LoRA adapters made only for Qwen3.5-4B; Me mode; Teacher mode; builds through Parallel; Meridian's tools for models measured as reliable; Model Lab and the Store; Tweaks with llama.cpp built from source, Vulkan drivers and presets; Storage; Croatian through Core's Translator; Chat holds the family's API keys.
 
 Online use is opt-in and uses the user's own provider key. Local model use does not require an online account.
 

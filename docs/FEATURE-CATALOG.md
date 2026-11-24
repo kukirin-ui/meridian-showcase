@@ -19,7 +19,7 @@ This is an inventory of the documented 3.0.00 product state, not a roadmap. It i
 - **Family updates** from any app's drawer.
 
 ### Chat
-- **14 job adapters** (LoRA) on one base model: code-py, code-c, code-sh, code-web, code-jvm, code-rust-go, fixer-shell, worker-shell, judge, cards, android, llm, net, chat; picked per job, named in every request; the Adapters page monitors them.
+- **14 job adapters** (LoRA), trained exclusively on **Qwen3.5-4B** and loaded only with a Qwen3.5-4B model (any quant; with another model they stay off and the model answers alone): code-py, code-c, code-sh, code-web, code-jvm, code-rust-go, fixer-shell, worker-shell, judge, cards, android, llm, net, chat; picked per job, named in every request; the Adapters page monitors them.
 - **Me mode:** commands run at once, file blocks are checked in a sandbox and the old file backed up, destructive commands held for a tap; at most six steps in a row.
 - **Teacher mode:** a failed command or file check goes to an online seat; its fix runs the same way, and a passing fix is a training example for that slot. Optional background verdicts.
 - **Builds through Parallel:** a ```build block from any model asks Parallel, through Core, to write, test and deliver a program; the result continues the conversation.
