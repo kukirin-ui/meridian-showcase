@@ -1,16 +1,59 @@
-# Meridian Family — complete implemented feature catalog (2.6.55)
+# Meridian Family — complete implemented feature catalog (3.0.00)
 
-This is an inventory of the documented 2.6.55 product state, not a roadmap. It is based on the private source tree, checked-in screen inventory, Core documentation, generated port topology, release scripts and current tests. A listed control may depend on device support, permissions, Core pairing, Termux or a configured model.
+This is an inventory of the documented 3.0.00 product state, not a roadmap. It is based on the private source tree, checked-in screen inventory, Core documentation, generated port topology, release scripts and current tests. A listed control may depend on device support, permissions, Core pairing, Termux or a configured model.
+
+## New in 3.0.00
+
+### The family: one mind
+- **Core's Mind:** the suite's one library and memory in one SQLite database compiled into Core (FTS5): documents in passages, recipe cards, proven fixes, lessons and learned cards; exact and near-duplicate refusal; BM25 search re-ranked by trust and by how often a record's use succeeded.
+- **Learning Kernel:** trust labels and their moves, Beta-Bernoulli arms with forgetting and Thompson sampling, EWMA + CUSUM change detection, SimHash deduplication. Every app's results are learner outcomes.
+- **Trust Ledger:** every change of trust in a hash chain that can be verified; trust records the environment it was earned in (Android API, phone) and counts lower elsewhere until re-tested. Knowledge whose use keeps failing is quarantined from advice.
+- **Episodes:** every app's work with its result and evidence (a command's exit code, a file check, a Sandbox run); reward 1 with evidence is VERIFIED and recorded on the ledger. Before a task, any model gets the most similar verified episodes as worked examples; the adapters' training export reads them.
+- **Shared mirror:** Core's hot knowledge in one read-only shared memory region for every app, sequence-locked and CRC-checked per section, so apps read without keeping Core busy.
+- **Wake:** only Core runs all the time. A command sent to an app through Core with `wake` makes Core open that app (its helper's `am start` as the shell, else Android's start, else a tap-to-open notice); with `release` Core closes it again after its answer, only when Core opened it.
+- **Caretaker:** upkeep in the rest window (charging, idle): compaction, integrity checks, duplicate merging, retirement of failing knowledge (restorable 90 days), the owner's week learned so upkeep never meets a game; file clean-up asked first.
+- **Constitution, Proof Engine, Survival Mode:** eight rules each naming its enforcer; consequential actions need a proof and are verified after; ONLINE / DEGRADED / STORAGE_CRITICAL / RECOVERY states.
+- **No artificial limits:** no caps on document, card, PDF or program size; only free storage limits.
+- **Internet switch:** one per app plus Core's master switch; Hard offline drops all internet traffic of the Meridian apps and Termux through Android's VPN with no server.
+- **Model-free helpers and the Core Reasoner:** the three likeliest causes and the check that tells them apart, without a model.
+- **Family updates** from any app's drawer.
+
+### Chat
+- **14 job adapters** (LoRA) on one base model: code-py, code-c, code-sh, code-web, code-jvm, code-rust-go, fixer-shell, worker-shell, judge, cards, android, llm, net, chat; picked per job, named in every request; the Adapters page monitors them.
+- **Me mode:** commands run at once, file blocks are checked in a sandbox and the old file backed up, destructive commands held for a tap; at most six steps in a row.
+- **Teacher mode:** a failed command or file check goes to an online seat; its fix runs the same way, and a passing fix is a training example for that slot. Optional background verdicts.
+- **Builds through Parallel:** a ```build block from any model asks Parallel, through Core, to write, test and deliver a program; the result continues the conversation.
+- **Tools for local models:** Meridian's tools as native tool calls (llama-server `--jinja`) for models the Model Lab measured at 80 % or more; others keep the blocks.
+- **Model Lab:** live speed test and code-checked tests (tool calling with 10 and 40 tools, code against unit tests, strict JSON, instructions, long context); the Store for GGUF models.
+- **One home for API platforms:** provider keys live in Chat; the other apps use them through Chat.
+- **Tweaks:** llama.cpp built from source in Termux, Vulkan drivers (Mesa Turnip), presets, 19 more llama-server options. **Storage**, **Core · Translator** (Croatian and English), training data per adapter.
+
+### Parallel
+- **Forge:** spec, knowledge, system check, architecture review, build with tests in the Sandbox, multi-model diagnosis, clean, security review, product (README, FORGE.json, MANIFEST.sha256), learn.
+- **Programs on request for the family:** `codegen` commands from any app through Core; progress back as it moves, the result with the program saved in `~/meridian-builds/<id>/`.
+- **Recipe Compiler** (a rollback for every change, refused commands, `bash -n`, post-tests) and **Repro Lab** (capture, signature, replay, ddmin minimizer).
+- Every fix and every part the Sandbox proves is a VERIFIED episode in Core. Opt-in training traces.
+
+### NullCloud
+- **Studio:** Learn (ranked search chain into Core's library as fact cards), Scrape (same site, robots.txt), Write (from sources only, unsourced sentences listed).
+- Reads only the public web: every redirect hop resolved and checked. No size caps on pages or PDFs.
+
+### Gaming
+- **Smart gaming:** per-game posture, Sweet Spot Finder, Silicon Fingerprint, Throttle Forecast, flight recorder of frame times, battery guard, exact restore.
+
+### Looks and security
+- **Theme Studio** (one theme for all five apps, 27 presets with licences credited, contrast checked) and **Looks and Effects**.
+- Each app's page runs only its own scripts (Content-Security-Policy with hashes); Core's own screen is not exported; Core's page has no file access.
 
 ## Product map
 
 | App | Responsibility | Owns |
 |---|---|---|
-| Core | System hub | ADB bridge, shared data/ports, family state and durable knowledge |
-| Chat | Intelligence workspace | Model configuration, conversation UX, projects, prompts and knowledge tools |
-| Gaming | Device operations | Monitoring, benchmarks, game profiles, task isolation and tuning |
-| Parallel | Termux workstation | Console, files, plans, tools, Doctor, Diagnose, Debugger, CodeGen and Sandbox |
-| NullCloud | Reading/research | Link/PDF/text ingestion, transformations and reading library |
+| Core | The family's mind | The Mind (library, memory, Trust Ledger, episodes), ADB bridge, shared data/ports, Wake, Caretaker, Translator |
+| Chat | Intelligence workspace | Models, job adapters, Me mode, Teacher mode, Model Lab, the family's API keys, conversation UX and knowledge tools |
+| Gaming | Device operations | Monitoring, Smart gaming, benchmarks, game profiles, task isolation and tuning |
+| Parallel | Termux workstation | Console, files, plans, Forge, programs on request, Doctor, Diagnose, Recipe Compiler, Repro Lab, Sandbox |
+| NullCloud | Reading/research | Link/PDF/text ingestion, Studio (learn, scrape, write), reading library |
 
 ## 1. Meridian Core
 
@@ -158,8 +201,8 @@ A visible tuning control does not guarantee that every Android vendor permits th
 - Local model, on-device AI, llama-server, GPU compute, Python jobs, Node services, web page, media box and remote shell recipes.
 - Debian and Ubuntu entry points through proot-distro.
 
-### APIs and scheduler
-- Optional BYOK provider and custom endpoint configuration.
+### Scheduler
+- Online providers come through Chat, which holds the keys for the family (3.0.00); Parallel no longer keeps its own.
 - User-defined task and cadence, refresh and stop-all controls.
 - Android background execution and Termux availability still govern whether scheduled work runs.
 
@@ -279,6 +322,10 @@ This section records the user-facing surfaces and controls present in the checke
 | Sandbox | Controlled runner, not hostile-code isolation |
 | Model Intelligence | Advisory complexity/context/calibration layer; not an embedding engine or automatic model selector |
 | Benchmarks | Specific to phone, model, backend, flags and thermal state |
+| Core opening apps (Wake) | Core's helper over Wireless debugging; without it the apps open each other the old way, or a notice asks for one tap |
+| Job adapters | Trained adapter files on Chat's llama-server; a slot without one uses the base model |
+| Tools for local models | A Model Lab tool result of 80 % or more for that model |
+| Hard offline | Android's VPN slot (one VPN at a time) |
 
 ## 9. Explicit non-claims
 - ADB shell elevation is not root.
@@ -290,3 +337,6 @@ This section records the user-facing surfaces and controls present in the checke
 - The Sandbox is not a complete security boundary.
 - UI presence does not guarantee vendor support.
 - Benchmark results are not universal Android performance claims.
+- Verified work is evidence from this phone; trust earned on another phone or Android version counts lower until re-tested.
+- An adapter is only as good as its training data; four of the fourteen slots had little or no training data at 3.0.00.
+- Core can open apps by itself only while its helper runs.

@@ -14,6 +14,7 @@ Canonical APKs are attached to [the latest Meridian release](https://github.com/
 Each app remains independently launchable. Connected functions depend on Core and relevant permissions/services.
 
 ## Updating safely
+- Any Meridian app's drawer shows which family apps are missing or behind and updates them from the latest release.
 - Download APKs from the same release; do not mix builds from different tags.
 - All five family APKs use the same signing certificate.
 - Android updates an installed package only when package identity and signing lineage are compatible.
@@ -27,7 +28,7 @@ The private source repository is [Clean-Meridian](https://github.com/kukirin-ui/
 4. One interactive yes authorizes the complete workflow.
 5. The phone downloads the exact CI artifact, signs all five APKs locally and verifies each signature against the pinned family certificate.
 6. The owner installs the five apps (ADB installation where available; otherwise Android installer confirmation).
-7. The release script publishes the five APKs and SHA-256 checksums to meridian-releases.
+7. The release script publishes the five APKs and SHA-256 checksums to meridian-releases: a stable release by default (tag `v<version>`, marked Latest), a pre-release only with `MF_CHANNEL=beta`.
 8. Release notes update the public site's What's New page; the script waits for and verifies the live Pages deployment.
 
 The private key and password stay on the phone. Android installer prompts and the local key password remain separate security requirements; the single release confirmation does not bypass OS or cryptographic controls.

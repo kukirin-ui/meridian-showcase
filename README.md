@@ -1,10 +1,10 @@
 <div align="center">
 
 # MERIDIAN FAMILY
-### Five Android apps. One connected system. Built from a phone.
-**An offline-first, model-agnostic Android environment for local AI, Termux engineering, device operations and shared knowledge.**
+### Five Android apps. One mind. Built from a phone.
+**An offline-first, model-agnostic Android environment for local AI, Termux engineering, device operations and shared knowledge that learns from its own verified work.**
 
-[![Android 11+](https://img.shields.io/badge/Android-11%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://www.android.com/) [![Termux](https://img.shields.io/badge/Termux-native-111111?style=for-the-badge&logo=gnubash&logoColor=white)](https://termux.dev/) [![Local AI](https://img.shields.io/badge/AI-local_first-6046D8?style=for-the-badge)](https://github.com/kukirin-ui/meridian-releases) [![Current](https://img.shields.io/badge/source-2.6.55-blue?style=for-the-badge)](https://github.com/kukirin-ui/meridian-releases/releases/latest)
+[![Android 11+](https://img.shields.io/badge/Android-11%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://www.android.com/) [![Termux](https://img.shields.io/badge/Termux-native-111111?style=for-the-badge&logo=gnubash&logoColor=white)](https://termux.dev/) [![Local AI](https://img.shields.io/badge/AI-local_first-6046D8?style=for-the-badge)](https://github.com/kukirin-ui/meridian-releases) [![Current](https://img.shields.io/badge/release-3.0.00-blue?style=for-the-badge)](https://github.com/kukirin-ui/meridian-releases/releases/latest)
 
 [Get the apps](https://github.com/kukirin-ui/meridian-releases) · [Website](https://kukirin-ui.github.io/meridian-site/) · [Architecture](docs/ARCHITECTURE.md) · [Complete feature catalog](docs/FEATURE-CATALOG.md) · [Benchmarks](docs/BENCHMARKS.md) · [Install & release](docs/INSTALL-AND-RELEASE.md)
 </div>
@@ -13,7 +13,7 @@
 
 ## Inside the apps — real interface captures
 
-These are captures from the published Meridian interface, not concept mockups. Open an image to inspect it at full size.
+These are captures from the published Meridian interface (2.6 series), not concept mockups; 3.0.00 screens add to them. Open an image to inspect it at full size.
 
 | Meridian Chat | Meridian Core |
 |---|---|
@@ -36,15 +36,25 @@ These are captures from the published Meridian interface, not concept mockups. O
 
 ## The idea
 
-Meridian is not one oversized chatbot with five tabs. It is a family of five standalone Android applications, each with a defined responsibility. They can run independently; when installed together, they communicate through a shared Core and typed app-to-app contracts.
+Meridian is not one oversized chatbot with five tabs. It is a family of five standalone Android applications, each with a defined responsibility. They can run independently; when installed together, they communicate through Core and typed contracts, and Core is their shared mind: one memory, trust that only evidence raises, and the one process that always runs, opening each app when there is work for it.
+
+## New in 3.0.00
+
+- **Core is the family's mind:** one library and memory in one database, ranked by what really worked on this phone, with every trust change on the Trust Ledger.
+- **Every app's verified work is shared:** commands that ran, files that passed their check, fixes the Sandbox proved and programs whose tests passed are kept in Core, and every model gets the closest verified work as an example before it answers.
+- **Core opens the apps for their work** and closes them again: only Core and the app on screen use memory.
+- **Any model can have a program built:** Parallel writes it with its tests, proves it in the Sandbox and saves it in Termux.
+- **14 job adapters** on one local model, **Teacher mode**, **Me mode**, **tools for local models**, **Model Lab**, **Forge**, **Recipe Compiler**, **Repro Lab**, **NullCloud Studio**, **Smart gaming**, **Theme Studio**, the **Caretaker**, the **internet switch** and **Core · Translator**.
+
+The complete list: [3.0.00 release notes](https://github.com/kukirin-ui/meridian-releases/releases/tag/v3.0.00) · [feature catalog](docs/FEATURE-CATALOG.md).
 
 | App | Responsibility |
 |---|---|
-| **Meridian Core** | Device bridge, family coordination, shared data and durable knowledge |
-| **Meridian Chat** | Local/online model interaction, projects, memory, skills and recipes |
-| **Meridian Gaming** | Device telemetry, performance tools, game profiles and benchmarks |
-| **Meridian Parallel** | Termux workstation, planning, build tools, diagnosis, debugging and CodeGen |
-| **NullCloud** | Reading and extracting knowledge from links, PDFs and text |
+| **Meridian Core** | The family's mind: shared memory, the Trust Ledger, verified work, app wake-up, device bridge |
+| **Meridian Chat** | Local/online models, job adapters, Me mode, Teacher mode, Model Lab, projects and knowledge |
+| **Meridian Gaming** | Device telemetry, Smart gaming, performance tools, game profiles and benchmarks |
+| **Meridian Parallel** | Termux workstation, Forge, programs on request for the family, diagnosis and the Sandbox |
+| **NullCloud** | Reading links, PDFs and text, and Studio: learn, scrape and write from sources |
 
 **Architectural rule:** each capability has an owner. Other apps request it or display its shared state; they should not grow competing copies of the same subsystem.
 
@@ -66,6 +76,7 @@ Core coordinates the family and owns shared services and durable knowledge.
 - Core-owned card/lesson/library storage and deterministic model-free retrieval.
 - ICM intent/context/method indexing; distinct successful solutions remain distinct.
 - Setup, activity, settings, update, About and support/report surfaces.
+- **3.0.00:** the Mind (one library and memory, Learning Kernel, Trust Ledger, episodes of verified work), a read-only shared mirror for every app, Wake (opens apps for their work and closes them again), the Caretaker, Constitution, Proof Engine, Survival Mode, the Reasoner, Theme Studio, the internet master switch and Core · Translator.
 
 **Privilege boundary:** this is Android shell-user access through the debugging interface, not root. Android can disable Wireless debugging after reboot; the user must reconnect.
 
@@ -81,6 +92,7 @@ Core coordinates the family and owns shared services and durable knowledge.
 - Projects, conversations, memory, custom instructions, tone, reusable prompts and attachments.
 - Termux file access and command handoff when connected.
 - Skill trees, skill cards, lessons, recipes, shared knowledge library and web search with citations.
+- **3.0.00:** 14 job adapters on one base model; Me mode; Teacher mode; builds through Parallel; Meridian's tools for models measured as reliable; Model Lab and the Store; Tweaks with llama.cpp built from source, Vulkan drivers and presets; Storage; Croatian through Core's Translator; Chat holds the family's API keys.
 
 Online use is opt-in and uses the user's own provider key. Local model use does not require an online account.
 
@@ -94,6 +106,7 @@ Online use is opt-in and uses the user's own provider key. Local model use does 
 - Heat-stop controls and advanced CPU/GPU/device tuning surfaces.
 - Local-model benchmark runner: CPU, GPU/Vulkan and mixed backend; GPU layers, threads, CPU affinity, Flash Attention, KV cache, prompt/generation lengths, batch, micro-batch, repeats, history and result verification.
 - Core, Termux and permission setup guidance.
+- **3.0.00:** Smart gaming: per-game posture, Sweet Spot Finder, the chip's efficiency fingerprint, Throttle Forecast, a frame-time recorder and an exact restore.
 
 Device operations depend on Android version, manufacturer firmware and granted permissions. A visible control is not a guarantee that every phone exposes that operation.
 
@@ -106,12 +119,13 @@ Device operations depend on Android version, manufacturer firmware and granted p
 - Build recipes and language/tool support for JavaScript/Node.js, Rust, Go, Ruby, PHP, Lua, Java, C/C++ and shell/JSON utilities.
 - Package tools, compilers, CMake, Make, Git, Docker CLI, Vim, Neovim, Micro, ripgrep, jq, tree, unzip, rsync, curl and wget.
 - Python jobs, Node services, local model/llama-server, GPU compute, SSH/remote shell and Debian/Ubuntu through proot-distro.
-- Optional BYOK API configuration and user-defined scheduler.
+- User-defined scheduler; online providers come through Chat, which holds the keys for the family.
 - Meridian Doctor categories for network, storage, memory, heat, battery, Termux, packages, local model, Core and permissions.
 - Diagnose from pasted errors or the last failed command; evidence-oriented fix recipes.
 - Debugger with file/source discovery.
 - Multi-file CodeGen with file contracts, path/extension/budget checks, Sandbox tests and bounded repair workflow.
 - Sandbox audit records and explicit test outcomes.
+- **3.0.00:** Forge (from an idea to a proven product), programs on request from any app and any model, the Recipe Compiler and the Repro Lab; every proven fix and part is kept in Core as verified work.
 
 Sandbox is a controlled test workflow, not a hardened hostile-code jail or a guarantee of filesystem/network isolation.
 
@@ -122,6 +136,7 @@ Sandbox is a controlled test workflow, not a hardened hostile-code jail or a gua
 - Ask follow-up questions about the source.
 - Local reading library.
 - Reuse Chat's configured model or use a standalone model path with GGUF selection, threads, GPU layers and context.
+- **3.0.00:** Studio (learn a topic into Core's library, scrape a site with robots.txt respected, write from sources only); only the public web is read, checked on every redirect; no size caps.
 
 ## The shared foundation
 
@@ -143,7 +158,10 @@ Core is the authority for durable shared knowledge; models are replaceable contr
 Missing model seats do not disable model-free diagnosis, retrieval or existing fix recipes. Model Intelligence adds advisory complexity routing, context budgeting and bounded outcome calibration; it does not silently replace user-selected models.
 
 ### Inter-app communication
-Apps communicate through Core's shared data provider and declared typed ports. Ports define an owner, schema and direction (telemetry, parameters, commands or events). CI checks generated Core/app contract parity to prevent ad-hoc cross-app dependencies.
+Apps communicate through Core's shared data provider and declared typed ports. Ports define an owner, schema and direction (telemetry, parameters, commands or events). CI checks generated Core/app contract parity to prevent ad-hoc cross-app dependencies. Since 3.0.00 a command can carry `wake`: Core opens the app it is for, and closes it again after its answer.
+
+### Verified work that teaches every model
+Every app's work is an episode in Core with its result and evidence. A writer never labels its own work above SOURCE; a passing run or check makes it VERIFIED and puts it on the Trust Ledger. Before a task, every model, local or online, gets the most similar verified episodes as worked examples, and the adapters are trained from them.
 
 ## Download and install
 
@@ -168,7 +186,7 @@ See [Install & release](docs/INSTALL-AND-RELEASE.md) and [Validation & boundarie
 
 ## Evidence and boundaries
 
-This showcase describes the documented 2.6.55 source state and checked-in screen inventory. It does not claim every phone exposes every device control, that shell elevation is root, that the Sandbox is a hostile-code security boundary, or that every generative task works without a model.
+This showcase describes the documented 3.0.00 source state and checked-in screen inventory. It does not claim every phone exposes every device control, that shell elevation is root, that the Sandbox is a hostile-code security boundary, or that every generative task works without a model.
 
 Benchmark results are device/configuration-specific. See [Benchmarks](docs/BENCHMARKS.md). The complete implemented surface and its dependencies are recorded in the [feature catalog](docs/FEATURE-CATALOG.md).
 
